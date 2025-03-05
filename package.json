@@ -4,11 +4,13 @@
   "scripts": {
     "dev": "npx tailwindcss -i ./src/input.css -o ./public/style.css --watch",
     "prebuild": "mkdir -p dist",
-    "build": "NODE_ENV=production npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
+    "build": "NODE_ENV=production node ./node_modules/tailwindcss/lib/cli.js -i ./src/input.css -o ./dist/output.css --minify",
     "start": "serve public"
   },
+  "dependencies": {
+    "tailwindcss": "^3.4.1"
+  },
   "devDependencies": {
-    "tailwindcss": "^3.4.1",
     "serve": "^14.2.1"
   }
 }
