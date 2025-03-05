@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "npx tailwindcss -i ./src/input.css -o ./public/style.css --watch",
-    "build": "npx tailwindcss -i ./src/input.css -o ./public/style.css --minify && cp -r assets public/",
+    "prebuild": "mkdir -p dist",
+    "build": "NODE_ENV=production npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
     "start": "serve public"
   },
   "devDependencies": {
